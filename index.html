@@ -57,6 +57,13 @@
       ]
     }
     </script>
+    <!-- Theme Init -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
 </head>
 
 <body>
@@ -81,6 +88,12 @@
                     <li><a href="#education" class="nav-link">Education</a></li>
                     <li><a href="#github" class="nav-link">GitHub</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                            <span class="icon-sun">☀️</span>
+                            <span class="icon-moon">🌙</span>
+                        </button>
+                    </li>
                     <li><a href="#contact" class="nav-cta">Hire Me</a></li>
                 </ul>
             </nav>
@@ -150,18 +163,19 @@
                             <div class="code-body">
                                 <pre><code><span class="c-keyword">const</span> <span class="c-var">engineer</span> = {
   <span class="c-prop">name</span>: <span class="c-str">"Priyanka Pradeep"</span>,
-  <span class="c-prop">role</span>: <span class="c-str">"Lead Backend Engineer"</span>,
+  <span class="c-prop">role</span>: <span class="c-str">"Lead Backend Engineer | AI Engineer"</span>,
   <span class="c-prop">experience</span>: <span class="c-num">7</span>,
   <span class="c-prop">specialties</span>: [
     <span class="c-str">"AI Engineering"</span>,
-    <span class="c-str">"Website Design"</span>,
-    <span class="c-str">"App Development"</span>,
+    <span class="c-str">"LLM Applications"</span>,
+    <span class="c-str">"Website Development"</span>,
+    <span class="c-str">"Mobile App Development"</span>,
     <span class="c-str">"Cloud & DevOps"</span>
   ],
   <span class="c-prop">stack</span>: [
-    <span class="c-str">"Python"</span>, <span class="c-str">"AI/ML"</span>,
-    <span class="c-str">"LangChain"</span>, <span class="c-str">"Node.js"</span>,
-    <span class="c-str">"AWS"</span>, <span class="c-str">"Docker"</span>
+    <span class="c-str">"Python | Nodejs | PHP"</span>, <span class="c-str">"AI/ML"</span>,
+    <span class="c-str">"RAG | LangChain | OpenAI"</span>, <span class="c-str">"Node.js"</span>,
+    <span class="c-str">"AWS | Docker | CI/CD"</span>, <span class="c-str">"Docker"</span>
   ],
   <span class="c-prop">openToWork</span>: <span class="c-bool">true</span>
 };</code></pre>
@@ -261,23 +275,46 @@
                                 <span class="timeline-date">Jan 2019 – Present</span>
                             </div>
                             <ul class="timeline-bullets">
-                                <li>Designed and implemented distributed microservice architectures handling
-                                    high-concurrency traffic</li>
-                                <li>Led a cross-functional development team, conducting code reviews and enforcing best
-                                    practices</li>
-                                <li>Managed application security, APIs, and multi-database environments (MongoDB, MySQL,
-                                    PostgreSQL, Redis)</li>
-                                <li>Built and maintained CI/CD pipelines using Jenkins, CircleCI, Docker, and SonarCloud
+                                <li>Led the design and development of scalable, high-performance backend systems and
+                                    distributed microservice architectures serving high-concurrency workloads.</li>
+                                <li>Architected and delivered end-to-end enterprise applications, collaborating closely
+                                    with product managers, designers, QA teams, and stakeholders.</li>
+                                <li>Mentored and led a cross-functional engineering team through sprint planning,
+                                    technical design discussions, code reviews, and performance optimization
+                                    initiatives.</li>
+                                <li>Built AI-powered solutions leveraging LLMs, OpenAI APIs, LangChain, vector databases
+                                    (Qdrant), Retrieval-Augmented Generation (RAG), semantic search, and hybrid search.
                                 </li>
-                                <li>Contributed to open source projects — bug fixes and new feature development</li>
-                                <li>Championed Test-Driven Development (TDD) across unit, integration, and E2E testing
+                                <li>Optimized application performance through database tuning, caching strategies, query
+                                    optimization, asynchronous processing, and efficient resource utilization.</li>
+                                <li>Managed multi-database environments including MongoDB, PostgreSQL, MySQL, Redis, and
+                                    Elasticsearch, ensuring high availability and scalability.
                                 </li>
+                                <li>Automated build, testing, deployment, and release processes using Docker, Jenkins,
+                                    GitHub Actions, CircleCI, and SonarCloud, improving delivery speed and code quality.
+                                </li>
+                                <li>Established engineering best practices through Test-Driven Development (TDD),
+                                    automated unit, integration, and end-to-end testing, significantly improving
+                                    application reliability.</li>
+                                <li>Collaborated with clients and stakeholders to translate business requirements into
+                                    scalable technical solutions and accurate project estimates.</li>
+                                <li>Contributed to open-source projects by implementing new features, fixing critical
+                                    issues, and participating in code reviews.</li>
+                                <li>Drove continuous improvement by introducing engineering standards, documentation
+                                    practices, knowledge-sharing sessions, and development workflows.</li>
                             </ul>
                             <div class="timeline-tags">
+                                <span class="tech-badge">Python</span>
                                 <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Nextjs</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                                <span class="tech-badge">Qdrant</span>
                                 <span class="tech-badge">MongoDB</span>
                                 <span class="tech-badge">AWS</span>
                                 <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">Jenkins</span>
                                 <span class="tech-badge">Kafka</span>
                                 <span class="tech-badge">Redis</span>
                             </div>
@@ -297,10 +334,20 @@
                                 <span class="timeline-date">Sep 2018 – Jan 2019</span>
                             </div>
                             <ul class="timeline-bullets">
-                                <li>Developed full-stack web applications using PHP and Laravel framework</li>
-                                <li>Maintained and enhanced production websites using PHP and MySQL</li>
-                                <li>Contributed to server-side scripting and database schema management</li>
-                                <li>Improved application stability through rigorous testing and QA</li>
+                                <li>Developed and maintained full-stack web applications using PHP, Laravel, JavaScript,
+                                    HTML, CSS, and MySQL.</li>
+                                <li>Built and enhanced backend modules, RESTful APIs, and database-driven features to
+                                    support business requirements.</li>
+                                <li>Collaborated with senior developers to implement new features, troubleshoot
+                                    production issues, and optimize application performance.</li>
+                                <li>Designed and maintained MySQL database schemas, queries, and stored procedures to
+                                    improve data integrity and efficiency.</li>
+                                <li>Assisted in maintaining and enhancing production websites by resolving bugs and
+                                    implementing feature enhancements.</li>
+                                <li>Worked closely with QA and product teams to identify, reproduce, and resolve defects
+                                    before deployment.</li>
+                                <li>Gained hands-on experience with version control, agile development practices, and
+                                    software development lifecycle (SDLC) processes.</li>
                             </ul>
                             <div class="timeline-tags">
                                 <span class="tech-badge">PHP</span>
@@ -348,11 +395,14 @@
                     <div class="skills-category glass-panel reveal">
                         <h4 class="skills-cat-title">Backend & Languages</h4>
                         <div class="skills-tags">
+                            <span class="skill-tag">Python</span>
                             <span class="skill-tag">Node.js</span>
                             <span class="skill-tag">Express.js</span>
                             <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">FastAPI</span>
                             <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Nextjs</span>
                             <span class="skill-tag">Laravel</span>
                             <span class="skill-tag">Symfony</span>
                         </div>
@@ -365,6 +415,7 @@
                             <span class="skill-tag">PostgreSQL</span>
                             <span class="skill-tag">Redis</span>
                             <span class="skill-tag">Elasticsearch</span>
+                            <span class="skill-tag">Qdrant</span>
                         </div>
                     </div>
                     <div class="skills-category glass-panel reveal">
@@ -397,6 +448,8 @@
                         <h4 class="skills-cat-title">Frontend</h4>
                         <div class="skills-tags">
                             <span class="skill-tag">React</span>
+                            <span class="skill-tag">Typescript</span>
+                            <span class="skill-tag">Nextjs</span>
                             <span class="skill-tag">HTML5</span>
                             <span class="skill-tag">CSS3</span>
                             <span class="skill-tag">JavaScript</span>
@@ -529,21 +582,18 @@
                         <div class="edu-body">
                             <div class="edu-top">
                                 <div>
-                                    <h3 class="edu-degree">B.Tech in Electronics & Communication Engineering</h3>
-                                    <div class="edu-school">Sree Buddha College of Engineering, Kerala Technological
-                                        University</div>
+                                    <h3 class="edu-degree">BE in Computer Science Engineering</h3>
+                                    <div class="edu-school">Fatima Michael College of Engineering and Technology</div>
                                 </div>
-                                <span class="edu-year">2014 – 2018</span>
+                                <span class="edu-year">2012 – 2016</span>
                             </div>
-                            <p class="edu-desc">Graduated with distinction — achieved 1st prize in 2nd semester, 2nd
-                                prize in 3rd and 7th semesters. Completed embedded systems certification 'THINKLABS'
+                            <p class="edu-desc">Graduated with First class — achieved 1st prize in 3nd semester, 2nd
+                                prize in 6rd and 7th semesters. Completed embedded systems certification 'THINKLABS'
                                 from IIT during this period.</p>
                             <div class="edu-badges">
-                                <span class="tech-badge">Electronics</span>
-                                <span class="tech-badge">Communication Systems</span>
-                                <span class="tech-badge">Embedded C</span>
-                                <span class="tech-badge">VLSI</span>
-                                <span class="tech-badge">Signal Processing</span>
+                                <span class="tech-badge">Computer Science</span>
+                                <span class="tech-badge">Data Structures</span>
+                                <span class="tech-badge">Algorithms</span>
                             </div>
                         </div>
                     </div>

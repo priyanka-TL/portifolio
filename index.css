@@ -40,6 +40,62 @@
     --max-w: 1200px;
 }
 
+[data-theme="light"] {
+    --bg: #f4f5f7;
+    --bg-light: #eaecf0;
+    --bg-card: rgba(255, 255, 255, 0.6);
+    --border: rgba(0, 0, 0, 0.08);
+    --border-glow: rgba(0, 200, 110, 0.2);
+
+    --primary: #00aa66;
+    --primary-dim: rgba(0, 170, 102, 0.12);
+    --primary-glow: rgba(0, 170, 102, 0.35);
+    --secondary: #008899;
+    --secondary-dim: rgba(0, 136, 153, 0.1);
+    --accent: #7a3bbb;
+
+    --text: #111111;
+    --text-muted: hsl(240, 5%, 40%);
+    --text-dim: hsl(240, 5%, 55%);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background var(--t-fast), color var(--t-fast);
+}
+
+.theme-toggle:hover {
+    background: rgba(128, 128, 128, 0.1);
+    color: var(--primary);
+}
+
+.theme-toggle .icon-moon {
+    display: none;
+}
+
+.theme-toggle .icon-sun {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+    display: none;
+}
+
+
 /* ── Reset ─────────────────────────────────────────────────── */
 *,
 *::before,
@@ -1243,10 +1299,17 @@ section[data-section-number="6"]::before {
     font-size: 0.95rem;
     color: var(--text);
     transition: color var(--t-fast);
+    word-break: break-word;
+    display: block;
 }
 
 .contact-card a:hover {
     color: var(--primary);
+}
+
+.contact-card > div:not(.contact-icon) {
+    overflow: hidden;
+    width: 100%;
 }
 
 .contact-socials {

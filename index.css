@@ -1307,7 +1307,7 @@ section[data-section-number="6"]::before {
     color: var(--primary);
 }
 
-.contact-card > div:not(.contact-icon) {
+.contact-card>div:not(.contact-icon) {
     overflow: hidden;
     width: 100%;
 }
@@ -1471,6 +1471,9 @@ footer {
     .hero-visual {
         display: flex;
         justify-content: center;
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
     }
 
     .code-card {
@@ -1478,6 +1481,10 @@ footer {
     }
 
     .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-section {
         grid-template-columns: 1fr;
     }
 
@@ -1564,7 +1571,14 @@ footer {
     }
 
     .hero-name {
-        font-size: 3rem;
+        font-size: clamp(2.5rem, 8vw, 3rem);
+        word-break: break-word;
+    }
+
+    .code-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .hero-actions {
